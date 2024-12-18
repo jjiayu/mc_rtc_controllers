@@ -1,25 +1,23 @@
 import mc_control
 import mc_rbdyn
 import mc_rtc
-import mc_tasks #Import the mc_tasks module
+import mc_tasks
 import eigen
 
 class MyFirstController(mc_control.MCPythonController):
     def __init__(self, rm, dt):
 
-        #Add contacts
-        self.addContact(self.robot().name(), "ground", "LeftFoot", "AllGround")
-        self.addContact(self.robot().name(), "ground", "RightFoot", "AllGround")
-
+        #Add constraints
         self.qpsolver.addConstraintSet(self.dynamicsConstraint)
         self.qpsolver.addConstraintSet(self.contactConstraint)
 
-        # Create a posture task
+        #Add a posture tasks
         self.qpsolver.addTask(self.postureTask)
-        self.jointName = ("NECK_Y").encode('utf-8')
-        self.jointIndex = self.robot().jointIndexByName(self.jointName)
-        self.goingLeft = True
-    
+        
+        #Add contacts)
+        self.addContact(self.robot().name(), "ground", "LeftFoot", "AllGround")
+        self.addContact(self.robot().name(), "ground", "RightFoot", "AllGround")
+
         # Create a CoM task
         self.comTask = mc_tasks.CoMTask(self.robots(), 0, 10.0, 1000.0) # inputs are, robot model, robot index 0 (main robot), gain (kp), weight (priority)
         self.qpsolver.addTask(self.comTask)
@@ -27,9 +25,16 @@ class MyFirstController(mc_control.MCPythonController):
         # Reduce the posture task stiffness
         self.postureTask.stiffness(1)
 
+        # Paramters
+        #   for posture task
+        self.jointName = ("NECK_Y").encode('utf-8')
+        self.jointIndex = self.robot().jointIndexByName(self.jointName)
+        self.goingLeft = True
+        #   for CoM task
         self.comDown = True
         self.comZero = eigen.Vector3d.Zero()
 
+    # Controller call back for each control cycle
     def run_callback(self):
         if (
             abs(
@@ -44,6 +49,12 @@ class MyFirstController(mc_control.MCPythonController):
             self.switch_com_target()
         return True
     
+    # Reset callback
+    def reset_callback(self, data):
+        # In the reset callback, reset the task to the current CoM
+        self.comTask.reset() #reset to a default pose
+        self.comZero = self.comTask.com()
+
     def switch_target(self):
         if self.goingLeft:
             self.postureTask.target({self.jointName: self.robot().qu[self.jointIndex]})
@@ -57,12 +68,6 @@ class MyFirstController(mc_control.MCPythonController):
         else:
             self.comTask.com(self.comZero)
         self.comDown = not self.comDown
-
-    def reset_callback(self, data):
-        # In the reset callback, reset the task to the current CoM
-        self.comTask.reset()
-        self.comZero = self.comTask.com()
-        pass
     
     #load the controller
     @staticmethod
