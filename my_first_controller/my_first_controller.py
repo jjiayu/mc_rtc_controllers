@@ -24,7 +24,6 @@ class MyFirstController(mc_control.MCPythonController):
     
     def switch_target(self):
         if self.goingLeft:
-            # print("target: ", self.robot().qu[self.jointIndex])
             self.postureTask.target({self.jointName: self.robot().qu[self.jointIndex]})
         else:
             self.postureTask.target({self.jointName: self.robot().ql[self.jointIndex]})
