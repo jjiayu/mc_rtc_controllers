@@ -3,6 +3,8 @@ import mc_rbdyn
 import mc_rtc
 import mc_tasks
 import eigen
+import math
+import sva
 
 class MyFirstController(mc_control.MCPythonController):
     def __init__(self, rm, dt):
@@ -14,13 +16,17 @@ class MyFirstController(mc_control.MCPythonController):
         #Add a posture tasks
         self.qpsolver.addTask(self.postureTask)
         
-        #Add contacts)
+        #Add contacts
         self.addContact(self.robot().name(), "ground", "LeftFoot", "AllGround")
         self.addContact(self.robot().name(), "ground", "RightFoot", "AllGround")
 
         # Create a CoM task
         self.comTask = mc_tasks.CoMTask(self.robots(), 0, 10.0, 1000.0) # inputs are, robot model, robot index 0 (main robot), gain (kp), weight (priority)
         self.qpsolver.addTask(self.comTask)
+
+        #Add a end-effector task
+        self.efTask = mc_tasks.EndEffectorTask("l_wrist", self.robots(), 0, 10.0, 1000.0)
+        self.qpsolver.addTask(self.efTask)
 
         # Reduce the posture task stiffness
         self.postureTask.stiffness(1)
@@ -34,7 +40,7 @@ class MyFirstController(mc_control.MCPythonController):
         self.comDown = True
         self.comZero = eigen.Vector3d.Zero()
 
-    # Controller call back for each control cycle
+    # Controller call back for each control cycle, here we gitve targets to the tasks
     def run_callback(self):
         if (
             abs(
@@ -47,13 +53,23 @@ class MyFirstController(mc_control.MCPythonController):
         
         if self.comTask.eval().norm()<0.01:
             self.switch_com_target()
+
+        # Get the current objective
+        pt = self.efTask.get_ef_pose()
+        # Update the rotation and position objective
+        self.efTask.set_ef_pose(sva.PTransformd(sva.RotY(-math.pi / 2), eigen.Vector3d(0.5, -0.5, 1.2))
+)
+    
         return True
     
     # Reset callback
     def reset_callback(self, data):
-        # In the reset callback, reset the task to the current CoM
+        # Reset CoM task
         self.comTask.reset() #reset to a default pose
         self.comZero = self.comTask.com()
+
+        # Reset end-effector task
+        self.efTask.reset()
 
     def switch_target(self):
         if self.goingLeft:
