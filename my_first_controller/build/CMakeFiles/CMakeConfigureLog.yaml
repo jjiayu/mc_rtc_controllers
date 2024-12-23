@@ -698,3 +698,85 @@ events:
         201703
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/usr/local/lib/cmake/ndcurves/cxx-standard.cmake:49 (try_run)"
+      - "/usr/local/lib/cmake/ndcurves/ndcurvesConfig.cmake:178 (CHECK_MINIMAL_CXX_STANDARD)"
+      - "/usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/usr/local/lib/cmake/mc_rtc/mc_rtcConfig.cmake:157 (find_dependency)"
+      - "CMakeLists.txt:14 (find_package)"
+    directories:
+      source: "/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp"
+      binary: "/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/local/lib/cmake/RBDyn"
+    buildResult:
+      variable: "_cxx_standard_build_status"
+      cached: true
+      stdout: |
+        Change Dir: '/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ee263/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ee263.dir/build.make CMakeFiles/cmTC_ee263.dir/build
+        gmake[1]: Entering directory '/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_ee263.dir/tmp-cxx-standard.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_ee263.dir/tmp-cxx-standard.cpp.o -c /home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/cmake/tmp-cxx-standard.cpp
+        Linking CXX executable cmTC_ee263
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee263.dir/link.txt --verbose=1
+        /usr/bin/c++ -rdynamic "CMakeFiles/cmTC_ee263.dir/tmp-cxx-standard.cpp.o" -o cmTC_ee263
+        gmake[1]: Leaving directory '/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "_cxx_standard_run_status"
+      cached: true
+      stdout: |
+        201703
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/usr/local/lib/cmake/ndcurves/cxx-standard.cmake:49 (try_run)"
+      - "/usr/local/lib/cmake/ndcurves/ndcurvesConfig.cmake:178 (CHECK_MINIMAL_CXX_STANDARD)"
+      - "/usr/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/usr/local/lib/cmake/mc_rtc/mc_rtcConfig.cmake:157 (find_dependency)"
+      - "CMakeLists.txt:14 (find_package)"
+    directories:
+      source: "/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp"
+      binary: "/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/local/lib/cmake/RBDyn"
+    buildResult:
+      variable: "_cxx_standard_build_status"
+      cached: true
+      stdout: |
+        Change Dir: '/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4591d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4591d.dir/build.make CMakeFiles/cmTC_4591d.dir/build
+        gmake[1]: Entering directory '/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_4591d.dir/tmp-cxx-standard.cpp.o
+        /usr/bin/c++    -o CMakeFiles/cmTC_4591d.dir/tmp-cxx-standard.cpp.o -c /home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/cmake/tmp-cxx-standard.cpp
+        Linking CXX executable cmTC_4591d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4591d.dir/link.txt --verbose=1
+        /usr/bin/c++ -rdynamic "CMakeFiles/cmTC_4591d.dir/tmp-cxx-standard.cpp.o" -o cmTC_4591d
+        gmake[1]: Leaving directory '/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "_cxx_standard_run_status"
+      cached: true
+      stdout: |
+        201703
+      exitCode: 0
+...

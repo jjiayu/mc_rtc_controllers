@@ -1,62 +1,74 @@
 #include "MyFirstController.h"
 
+#include <mc_rbdyn/RobotLoader.h>
+
 MyFirstController::MyFirstController(mc_rbdyn::RobotModulePtr rm, double dt, const mc_rtc::Configuration & config)
-: mc_control::MCController(rm, dt)
+: mc_control::MCController({rm,
+                            mc_rbdyn::RobotLoader::get_robot_module("env",
+                                                                    std::string(mc_rtc::MC_ENV_DESCRIPTION_PATH)
+                                                                        + "/../mc_int_obj_description",
+                                                                    std::string("door")),
+                            mc_rbdyn::RobotLoader::get_robot_module("env",
+                                                                    std::string(mc_rtc::MC_ENV_DESCRIPTION_PATH),
+                                                                    std::string("ground"))},
+                           dt)
 {
-  jointIndex = robot().jointIndexByName("NECK_Y");
-  
+  config_.load(config);
   solver().addConstraintSet(contactConstraint);
   solver().addConstraintSet(dynamicsConstraint);
   solver().addTask(postureTask);
   addContact({robot().name(), "ground", "LeftFoot", "AllGround"});
   addContact({robot().name(), "ground", "RightFoot", "AllGround"});
-
-  comTask = std::make_shared<mc_tasks::CoMTask>(robots(), 0, 10.0, 1000.0); //com task
+  comTask = std::make_shared<mc_tasks::CoMTask>(robots(), 0, 10.0, 1000.0);
   solver().addTask(comTask);
   postureTask->stiffness(1);
 
-  mc_rtc::log::success("MyFirstController init done ");
+  mc_rtc::log::success("MyFirstController init done");
 }
 
 bool MyFirstController::run()
 {
-  if(comTask->eval().norm() < 0.01)
-  {
-    switch_com_target();
-  }
-  return mc_control::MCController::run(); //delegate to MCController to run the QP
-  }
+  switch_phase();
+  return mc_control::MCController::run();
+}
 
 void MyFirstController::reset(const mc_control::ControllerResetData & reset_data)
 {
-  comTask->reset();
-  comZero = comTask->com();
   mc_control::MCController::reset(reset_data);
+  comTask->reset();
+  robots().robot(1).posW(sva::PTransformd(sva::RotZ(M_PI), Eigen::Vector3d(0.7, 0.5, 0)));
+  doorKinematics = std::make_shared<mc_solver::KinematicsConstraint>(robots(), 1, solver().dt());
+  solver().addConstraintSet(*doorKinematics);
+  doorPosture = std::make_shared<mc_tasks::PostureTask>(solver(), 1, 5.0, 1000.0);
+  solver().addTask(doorPosture);
+  handTask = std::make_shared<mc_tasks::SurfaceTransformTask>("RightGripper", robots(), 0);
+  solver().addTask(handTask);
+  handTask->target(sva::PTransformd(Eigen::Vector3d(0, 0, -0.025)) * robots().robot(1).surfacePose("Handle"));
 }
 
-void MyFirstController::switch_target()
+void MyFirstController::switch_phase()
 {
-  if(goingLeft)
+  if(phase == APPROACH && handTask->eval().norm() < 0.05 && handTask->speed().norm() < 1e-4)
   {
-    postureTask->target({{"NECK_Y", robot().qu()[jointIndex]}});
+    // Add a new contact
+    addContact({robot().name(), "door", "RightGripper", "Handle"});
+    // Remove the surface transform task
+    solver().removeTask(handTask);
+    // Keep the robot in its current posture
+    postureTask->reset();
+    comTask->reset();
+    // Target new handle position
+    doorPosture->target({{"handle", {-1.0}}});
+    // Switch phase
+    phase = HANDLE;
   }
-  else
+  else if(phase == HANDLE && doorPosture->eval().norm() < 0.01)
   {
-    postureTask->target({{"NECK_Y", robot().ql()[jointIndex]}});
+    // Update door opening target
+    doorPosture->target({{"door", {0.5}}});
+    // Switch phase
+    phase = OPEN;
   }
-  goingLeft = !goingLeft;
 }
-
-void MyFirstController::switch_com_target()
-{
-  // comZero is obtained by doing:
-  // comZero = comTask->com();
-  // in the reset function
-  if(comDown) { comTask->com(comZero - Eigen::Vector3d{0, 0, 0.2}); }
-  else { comTask->com(comZero); }
-  comDown = !comDown;
-}
-
-
 
 CONTROLLER_CONSTRUCTOR("MyFirstController", MyFirstController)

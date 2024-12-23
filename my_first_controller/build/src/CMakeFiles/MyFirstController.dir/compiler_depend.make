@@ -36,6 +36,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/include/boost/core/enable_if.hpp \
   /usr/include/boost/core/explicit_operator_bool.hpp \
   /usr/include/boost/core/no_exceptions_support.hpp \
+  /usr/include/boost/core/noncopyable.hpp \
   /usr/include/boost/cstdint.hpp \
   /usr/include/boost/current_function.hpp \
   /usr/include/boost/detail/call_traits.hpp \
@@ -282,6 +283,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/include/boost/mpl/transform.hpp \
   /usr/include/boost/mpl/void.hpp \
   /usr/include/boost/mpl/void_fwd.hpp \
+  /usr/include/boost/noncopyable.hpp \
   /usr/include/boost/preprocessor/arithmetic/add.hpp \
   /usr/include/boost/preprocessor/arithmetic/dec.hpp \
   /usr/include/boost/preprocessor/arithmetic/inc.hpp \
@@ -821,11 +823,15 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/include/fmt/core.h \
   /usr/include/fmt/format.h \
   /usr/include/fmt/ostream.h \
+  /usr/include/libltdl/lt_dlloader.h \
+  /usr/include/libltdl/lt_error.h \
+  /usr/include/libltdl/lt_system.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
+  /usr/include/ltdl.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -1034,6 +1040,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/local/include/mc_rbdyn/RobotConverterConfig.h \
   /usr/local/include/mc_rbdyn/RobotData.h \
   /usr/local/include/mc_rbdyn/RobotFrame.h \
+  /usr/local/include/mc_rbdyn/RobotLoader.h \
   /usr/local/include/mc_rbdyn/RobotModule.h \
   /usr/local/include/mc_rbdyn/Robots.h \
   /usr/local/include/mc_rbdyn/Springs.h \
@@ -1053,6 +1060,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/local/include/mc_rtc/Schema.h \
   /usr/local/include/mc_rtc/SchemaMacros.h \
   /usr/local/include/mc_rtc/clock.h \
+  /usr/local/include/mc_rtc/config.h \
   /usr/local/include/mc_rtc/constants.h \
   /usr/local/include/mc_rtc/deprecated.h \
   /usr/local/include/mc_rtc/gui.h \
@@ -1099,7 +1107,11 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/local/include/mc_rtc/gui/plot/Polygons.h \
   /usr/local/include/mc_rtc/gui/plot/types.h \
   /usr/local/include/mc_rtc/gui/types.h \
+  /usr/local/include/mc_rtc/io_utils.h \
   /usr/local/include/mc_rtc/iterators.h \
+  /usr/local/include/mc_rtc/loader.h \
+  /usr/local/include/mc_rtc/loader.hpp \
+  /usr/local/include/mc_rtc/loader_api.h \
   /usr/local/include/mc_rtc/log/Logger.h \
   /usr/local/include/mc_rtc/log/utils.h \
   /usr/local/include/mc_rtc/logging.h \
@@ -1125,8 +1137,10 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
   /usr/local/include/mc_tasks/CoMTask.h \
   /usr/local/include/mc_tasks/MetaTask.h \
   /usr/local/include/mc_tasks/PostureTask.h \
+  /usr/local/include/mc_tasks/SurfaceTransformTask.h \
   /usr/local/include/mc_tasks/TVMTrajectoryTaskGeneric.h \
   /usr/local/include/mc_tasks/TrajectoryTaskGeneric.h \
+  /usr/local/include/mc_tasks/TransformTask.h \
   /usr/local/include/mc_tasks/api.h \
   /usr/local/include/mc_tasks/tasks_traits.h \
   /usr/local/include/mc_tvm/DynamicFunction.h \
@@ -1370,9 +1384,13 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/local/include/mc_tasks/api.h:
 
+/usr/local/include/mc_tasks/TransformTask.h:
+
 /usr/local/include/mc_tasks/TrajectoryTaskGeneric.h:
 
 /usr/local/include/mc_tasks/TVMTrajectoryTaskGeneric.h:
+
+/usr/local/include/mc_tasks/SurfaceTransformTask.h:
 
 /usr/local/include/mc_tasks/PostureTask.h:
 
@@ -1394,6 +1412,22 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/local/include/mc_rtc/version.h:
 
+/usr/local/include/mc_rtc/type_name.h:
+
+/usr/local/include/mc_rtc/shared.h:
+
+/usr/local/include/mc_rtc/pragma.h:
+
+/usr/local/include/mc_rtc/macros/deprecated.h:
+
+/usr/local/include/mc_rtc/logging.h:
+
+/usr/local/include/mc_tvm/DynamicFunction.h:
+
+/usr/local/include/mc_rtc/log/Logger.h:
+
+/usr/local/include/mc_rtc/loader.hpp:
+
 /usr/include/c++/11/bits/stl_set.h:
 
 /usr/include/c++/11/bits/stl_queue.h:
@@ -1407,8 +1441,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/local/include/mc_rtc/gui/Sphere.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
-
-/usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/c++/11/bits/std_function.h:
 
@@ -1427,10 +1459,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/c++/11/bits/localefwd.h:
-
-/usr/include/c++/11/bits/locale_facets.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/stdio.h:
 
 /usr/local/include/tvm/scheme/internal/Assignment.h:
 
@@ -1552,6 +1580,10 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/type_traits/is_copy_constructible.hpp:
 
+/usr/local/include/mc_rtc/unique_ptr.h:
+
+/usr/include/boost/mpl/aux_/empty_impl.hpp:
+
 /usr/include/boost/mpl/max_element.hpp:
 
 /usr/include/eigen3/Eigen/Householder:
@@ -1563,6 +1595,10 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/local/include/mc_rtc/gui/plot/Polygon.h:
 
 /usr/include/boost/type_traits/integral_constant.hpp:
+
+/usr/local/include/mc_rtc/log/utils.h:
+
+/usr/include/boost/type_traits/add_reference.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
 
@@ -1712,8 +1748,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/preprocessor/list/reverse.hpp:
 
-/usr/local/include/mc_rtc/macros/deprecated.h:
-
 /usr/include/boost/preprocessor/list/fold_right.hpp:
 
 /usr/include/boost/mpl/assert.hpp:
@@ -1735,6 +1769,10 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/boost/type_traits/is_floating_point.hpp:
 
 /usr/include/c++/11/bits/fstream.tcc:
+
+/usr/local/include/mc_rtc/macros/pp_id.h:
+
+/usr/include/boost/mpl/quote.hpp:
 
 /usr/include/boost/mpl/aux_/insert_impl.hpp:
 
@@ -1790,6 +1828,12 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/variant/detail/enable_recursive.hpp:
 
+/usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/boost/noncopyable.hpp:
+
 /usr/include/boost/mpl/transform.hpp:
 
 /usr/include/c++/11/bits/std_mutex.h:
@@ -1810,11 +1854,11 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/variant/apply_visitor.hpp:
 
-/usr/include/c++/11/bits/stl_list.h:
-
 /usr/include/boost/preprocessor/config/config.hpp:
 
 /usr/include/boost/detail/templated_streams.hpp:
+
+/usr/include/c++/11/bits/stl_list.h:
 
 /usr/include/boost/preprocessor/facilities/identity.hpp:
 
@@ -1908,12 +1952,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/variant/detail/apply_visitor_unary.hpp:
 
-/usr/include/c++/11/bits/ostream_insert.h:
-
-/usr/include/boost/mpl/push_back_fwd.hpp:
-
-/usr/include/boost/mpl/aux_/config/nttp.hpp:
-
 /usr/include/boost/mpl/aux_/config/forwarding.hpp:
 
 /usr/include/c++/11/bits/charconv.h:
@@ -1961,8 +1999,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/c++/11/istream:
 
 /usr/include/boost/mpl/aux_/arity_spec.hpp:
-
-/usr/include/c++/11/cxxabi.h:
 
 /usr/include/boost/mpl/int_fwd.hpp:
 
@@ -2096,10 +2132,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/mpl/aux_/config/compiler.hpp:
 
-/usr/local/include/mc_tvm/DynamicFunction.h:
-
-/usr/local/include/mc_rtc/log/Logger.h:
-
 /usr/include/boost/mpl/list.hpp:
 
 /usr/include/boost/config/detail/select_compiler_config.hpp:
@@ -2212,6 +2244,8 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/eigen3/Eigen/src/Geometry/Scaling.h:
 
+/usr/include/boost/core/noncopyable.hpp:
+
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
@@ -2269,8 +2303,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/boost/type_traits/detail/yes_no_type.hpp:
 
 /usr/include/boost/detail/reference_content.hpp:
-
-/usr/local/include/mc_rtc/pragma.h:
 
 /usr/include/boost/preprocessor/arithmetic/add.hpp:
 
@@ -2348,6 +2380,14 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/integer/common_factor_ct.hpp:
 
+/usr/include/c++/11/bits/ostream_insert.h:
+
+/usr/include/boost/mpl/push_back_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/config/nttp.hpp:
+
+/usr/include/ltdl.h:
+
 /usr/include/boost/move/detail/meta_utils.hpp:
 
 /usr/include/boost/type_traits/is_nothrow_move_assignable.hpp:
@@ -2409,10 +2449,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/local/include/mc_rtc/visual_utils.h:
 
 /usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
-
-/usr/include/boost/type_traits/add_reference.hpp:
-
-/usr/local/include/mc_rtc/log/utils.h:
 
 /usr/include/boost/mpl/aux_/lambda_support.hpp:
 
@@ -2584,6 +2620,8 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/boost/mpl/fold.hpp:
 
+/usr/local/include/mc_rtc/loader_api.h:
+
 /usr/include/boost/mpl/placeholders.hpp:
 
 /usr/include/boost/mpl/front.hpp:
@@ -2687,6 +2725,8 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/boost/mpl/list/aux_/tag.hpp:
 
 /usr/include/boost/mpl/or.hpp:
+
+/usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/c++/11/bits/stl_vector.h:
 
@@ -2842,6 +2882,10 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/c++/11/stdlib.h:
 
+/usr/local/include/mc_rtc/utils_api.h:
+
+/usr/include/spdlog/fmt/fmt.h:
+
 /usr/local/include/tvm/solver/internal/SolverEvents.h:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
@@ -2930,8 +2974,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
 
-/usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
-
 /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
 
 /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
@@ -3017,6 +3059,8 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/boost/mpl/find_if.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/Product.h:
+
+/usr/local/include/mc_rtc/io_utils.h:
 
 /usr/include/eigen3/Eigen/src/Core/Random.h:
 
@@ -3202,6 +3246,16 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/fmt/ostream.h:
 
+/usr/include/libltdl/lt_dlloader.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/local/include/mc_rtc/gui/Button.h:
+
+/usr/include/libltdl/lt_error.h:
+
+/usr/include/libltdl/lt_system.h:
+
 /usr/include/linux/close_range.h:
 
 /usr/include/locale.h:
@@ -3326,8 +3380,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/local/include/mc_rtc/type_name.h:
-
 /usr/include/c++/11/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
@@ -3407,10 +3459,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/x86_64-linux-gnu/bits/unistd.h:
 
 /usr/local/include/mc_control/Configuration.h:
-
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/usr/local/include/mc_rtc/gui/Button.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -3570,6 +3618,8 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/local/include/mc_rbdyn/RobotFrame.h:
 
+/usr/local/include/mc_rbdyn/RobotLoader.h:
+
 /usr/local/include/mc_rbdyn/Robots.h:
 
 /usr/local/include/mc_rbdyn/Springs.h:
@@ -3597,6 +3647,10 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 /usr/include/c++/11/bits/vector.tcc:
 
 /usr/local/include/mc_rtc/SchemaMacros.h:
+
+/usr/include/c++/11/cxxabi.h:
+
+/usr/local/include/mc_rtc/config.h:
 
 /usr/include/asm-generic/errno.h:
 
@@ -3674,18 +3728,6 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: /home/jiayu/Deskto
 
 /usr/local/include/mc_rtc/gui/plot/Ordinate.h:
 
-/usr/local/include/mc_rtc/logging.h:
+/usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
 
-/usr/include/boost/mpl/quote.hpp:
-
-/usr/local/include/mc_rtc/macros/pp_id.h:
-
-/usr/local/include/mc_rtc/shared.h:
-
-/usr/include/boost/mpl/aux_/empty_impl.hpp:
-
-/usr/local/include/mc_rtc/unique_ptr.h:
-
-/usr/include/spdlog/fmt/fmt.h:
-
-/usr/local/include/mc_rtc/utils_api.h:
+/usr/local/include/mc_rtc/loader.h:
