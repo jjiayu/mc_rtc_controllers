@@ -1,6 +1,6 @@
 {
     "type": "body6d",
-    "frame": "r_wrist",
-    "orientation": [0.0, 0.0, 0.0],
-    "position": [0.0, 0.0, 0.0]
+    "frame": "l_wrist",
+    "orientation": [0, 0, 0, 0],
+    "position": [0, 0.4, 0.2]
   }

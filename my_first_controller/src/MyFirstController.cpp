@@ -9,8 +9,8 @@ MyFirstController::MyFirstController(mc_rbdyn::RobotModulePtr rm, double dt, con
   // solver().addTask(postureTask);
   addContact({robot().name(), "ground", "LeftFoot", "AllGround"});
   addContact({robot().name(), "ground", "RightFoot", "AllGround"});
-  comTask = std::make_shared<mc_tasks::CoMTask>(robots(), 0, 10.0, 1000.0);
-  solver().addTask(comTask);
+  // comTask = std::make_shared<mc_tasks::CoMTask>(robots(), 0, 1.0, 1.0);
+  // solver().addTask(comTask);
   auto etask = mc_tasks::MetaTaskLoader::load(solver(), "/home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/etc/task.json");
   solver().addTask(etask);
   // postureTask->stiffness(1);
@@ -21,15 +21,15 @@ MyFirstController::MyFirstController(mc_rbdyn::RobotModulePtr rm, double dt, con
 bool MyFirstController::run()
 {
   // if(std::abs(postureTask->posture()[jointIndex][0] - robot().mbc().q[jointIndex][0]) < 0.05) { switch_target(); }
-  if(comTask->eval().norm() < 0.01) { switch_com_target(); }
+  // if(comTask->eval().norm() < 0.01) { switch_com_target(); }
   return mc_control::MCController::run();
 }
 
 void MyFirstController::reset(const mc_control::ControllerResetData & reset_data)
 {
   mc_control::MCController::reset(reset_data);
-  comTask->reset();
-  comZero = comTask->com();
+  // comTask->reset();
+  // comZero = comTask->com();
 }
 
 // void MyFirstController::switch_target()
@@ -39,11 +39,11 @@ void MyFirstController::reset(const mc_control::ControllerResetData & reset_data
   // goingLeft = !goingLeft;
 // }
 
-void MyFirstController::switch_com_target()
-{
-  if(comDown) { comTask->com(comZero - Eigen::Vector3d{0, 0, 0.2}); }
-  else { comTask->com(comZero); }
-  comDown = !comDown;
-}
+// void MyFirstController::switch_com_target()
+// {
+//   if(comDown) { comTask->com(comZero - Eigen::Vector3d{0, 0, 0.2}); }
+//   else { comTask->com(comZero); }
+//   comDown = !comDown;
+// }
 
 CONTROLLER_CONSTRUCTOR("MyFirstController", MyFirstController)
