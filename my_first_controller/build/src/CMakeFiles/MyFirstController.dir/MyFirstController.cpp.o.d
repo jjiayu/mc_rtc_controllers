@@ -1107,14 +1107,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: \
  /usr/local/include/tvm/task_dynamics/Proportional.h \
  /usr/local/include/tvm/3rd-party/mpark/variant.hpp \
  /usr/local/include/tvm/task_dynamics/ProportionalDerivative.h \
- /usr/local/include/mc_tasks/SurfaceTransformTask.h \
- /usr/local/include/mc_tasks/TransformTask.h \
- /home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/src/api.h \
- /usr/local/include/mc_rbdyn/RobotLoader.h \
- /usr/local/include/mc_rtc/io_utils.h /usr/local/include/mc_rtc/config.h \
- /usr/local/include/mc_rtc/loader.h \
- /usr/local/include/mc_rtc/loader_api.h \
- /usr/include/boost/noncopyable.hpp \
- /usr/include/boost/core/noncopyable.hpp /usr/include/ltdl.h \
- /usr/include/libltdl/lt_system.h /usr/include/libltdl/lt_error.h \
- /usr/include/libltdl/lt_dlloader.h /usr/local/include/mc_rtc/loader.hpp
+ /usr/local/include/mc_tasks/MetaTaskLoader.h \
+ /usr/local/include/mc_solver/GenericLoader.h \
+ /usr/local/include/mc_solver/GenericLoader.hpp \
+ /home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/src/api.h
