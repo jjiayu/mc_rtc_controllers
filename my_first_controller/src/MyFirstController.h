@@ -1,7 +1,7 @@
 #pragma once
 
 #include <mc_control/mc_controller.h>
-
+#include <mc_tasks/CoMTask.h>
 
 #include "api.h"
 
@@ -15,7 +15,12 @@ struct MyFirstController_DLLAPI MyFirstController : public mc_control::MCControl
 
   void switch_target();
 
+  void switch_com_target();
+
   private:
     int jointIndex = 0;
     bool goingLeft = true;
+    std::shared_ptr<mc_tasks::CoMTask> comTask;
+    Eigen::Vector3d comZero;
+    bool comDown = true;
 };

@@ -6,24 +6,31 @@ MyFirstController::MyFirstController(mc_rbdyn::RobotModulePtr rm, double dt, con
   jointIndex = robot().jointIndexByName("NECK_Y");
   
   solver().addConstraintSet(contactConstraint);
-  solver().addConstraintSet(kinematicsConstraint);
+  solver().addConstraintSet(dynamicsConstraint);
   solver().addTask(postureTask);
-  solver().setContacts({{}});
+  addContact({robot().name(), "ground", "LeftFoot", "AllGround"});
+  addContact({robot().name(), "ground", "RightFoot", "AllGround"});
+
+  comTask = std::make_shared<mc_tasks::CoMTask>(robots(), 0, 10.0, 1000.0); //com task
+  solver().addTask(comTask);
+  postureTask->stiffness(1);
 
   mc_rtc::log::success("MyFirstController init done ");
 }
 
 bool MyFirstController::run()
 {
-  if(std::abs(postureTask->posture()[jointIndex][0] - robot().mbc().q[jointIndex][0]) < 0.05)
+  if(comTask->eval().norm() < 0.01)
   {
-    switch_target();
+    switch_com_target();
   }
   return mc_control::MCController::run(); //delegate to MCController to run the QP
   }
 
 void MyFirstController::reset(const mc_control::ControllerResetData & reset_data)
 {
+  comTask->reset();
+  comZero = comTask->com();
   mc_control::MCController::reset(reset_data);
 }
 
@@ -39,6 +46,17 @@ void MyFirstController::switch_target()
   }
   goingLeft = !goingLeft;
 }
+
+void MyFirstController::switch_com_target()
+{
+  // comZero is obtained by doing:
+  // comZero = comTask->com();
+  // in the reset function
+  if(comDown) { comTask->com(comZero - Eigen::Vector3d{0, 0, 0.2}); }
+  else { comTask->com(comZero); }
+  comDown = !comDown;
+}
+
 
 
 CONTROLLER_CONSTRUCTOR("MyFirstController", MyFirstController)

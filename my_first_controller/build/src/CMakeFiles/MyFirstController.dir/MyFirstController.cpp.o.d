@@ -1036,4 +1036,75 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o: \
  /usr/local/include/mc_tasks/PostureTask.h \
  /usr/local/include/mc_tasks/MetaTask.h /usr/local/include/mc_tasks/api.h \
  /usr/local/include/mc_rtc/version.h \
+ /usr/local/include/mc_tasks/CoMTask.h \
+ /usr/local/include/mc_tasks/TrajectoryTaskGeneric.h \
+ /usr/local/include/mc_tasks/TVMTrajectoryTaskGeneric.h \
+ /usr/local/include/mc_tasks/tasks_traits.h \
+ /usr/local/include/mc_solver/TVMQPSolver.h \
+ /usr/local/include/mc_rtc/clock.h \
+ /usr/local/include/tvm/ControlProblem.h /usr/local/include/tvm/Task.h \
+ /usr/local/include/tvm/constraint/enums.h \
+ /usr/local/include/tvm/constraint/internal/RHSVectors.h \
+ /usr/local/include/tvm/task_dynamics/abstract/TaskDynamics.h \
+ /usr/local/include/tvm/task_dynamics/abstract/TaskDynamicsImpl.h \
+ /usr/local/include/tvm/task_dynamics/enums.h \
+ /usr/local/include/tvm/utils/ProtoTask.h \
+ /usr/local/include/tvm/utils/AffineExpr.h \
+ /usr/local/include/tvm/utils/internal/AffineExprDetail.h \
+ /usr/local/include/tvm/utils/internal/AffineExprOperators.h \
+ /usr/local/include/tvm/utils/internal/ProtoTaskDetails.h \
+ /usr/local/include/tvm/function/IdentityFunction.h \
+ /usr/local/include/tvm/function/BasicLinearFunction.h \
+ /usr/local/include/tvm/internal/VariableCountingVector.h \
+ /usr/local/include/tvm/internal/RangeCounting.h /usr/include/c++/11/list \
+ /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
+ /usr/local/include/tvm/graph/CallGraph.h \
+ /usr/local/include/tvm/graph/internal/DependencyGraph.h \
+ /usr/include/c++/11/stack /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_stack.h \
+ /usr/local/include/tvm/requirements/SolvingRequirements.h \
+ /usr/local/include/tvm/requirements/AnisotropicWeight.h \
+ /usr/local/include/tvm/requirements/abstract/SingleSolvingRequirement.h \
+ /usr/local/include/tvm/internal/CallbackManager.h \
+ /usr/local/include/tvm/internal/PairElementToken.h \
+ /usr/local/include/tvm/requirements/PriorityLevel.h \
+ /usr/local/include/tvm/requirements/ViolationEvaluation.h \
+ /usr/local/include/tvm/requirements/Weight.h \
+ /usr/local/include/tvm/scheme/internal/ProblemComputationData.h \
+ /usr/local/include/tvm/scheme/internal/ProblemDefinitionEvent.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
+ /usr/local/include/tvm/scheme/internal/ResolutionSchemeBase.h \
+ /usr/local/include/tvm/scheme/internal/SchemeAbilities.h \
+ /usr/local/include/tvm/constraint/abstract/Constraint.h \
+ /usr/local/include/tvm/graph/abstract/OutputSelector.h \
+ /usr/local/include/tvm/scheme/internal/helpers.h \
+ /usr/local/include/tvm/task_dynamics/None.h \
+ /usr/local/include/tvm/LinearizedControlProblem.h \
+ /usr/local/include/tvm/hint/Substitution.h \
+ /usr/local/include/tvm/hint/abstract/SubstitutionCalculator.h \
+ /usr/local/include/tvm/hint/abstract/SubstitutionCalculatorImpl.h \
+ /usr/local/include/tvm/hint/internal/AutoCalculator.h \
+ /usr/local/include/tvm/hint/internal/Substitutions.h \
+ /usr/local/include/tvm/hint/internal/SubstitutionUnit.h \
+ /usr/local/include/tvm/constraint/BasicLinearConstraint.h \
+ /usr/local/include/tvm/constraint/abstract/LinearConstraint.h \
+ /usr/local/include/tvm/scheme/WeightedLeastSquares.h \
+ /usr/local/include/tvm/internal/traits.h \
+ /usr/local/include/tvm/scheme/abstract/ResolutionScheme.h \
+ /usr/local/include/tvm/utils/memoryChecks.h \
+ /usr/local/include/tvm/scheme/internal/helpers.hpp \
+ /usr/local/include/tvm/scheme/internal/Assignment.h \
+ /usr/local/include/tvm/scheme/internal/AssignmentTarget.h \
+ /usr/local/include/tvm/scheme/internal/CompiledAssignmentWrapper.h \
+ /usr/local/include/tvm/scheme/internal/CompiledAssignment.h \
+ /usr/local/include/tvm/scheme/internal/MatrixAssignment.h \
+ /usr/local/include/tvm/scheme/internal/Assignment.hpp \
+ /usr/local/include/tvm/scheme/internal/LinearizedProblemComputationData.h \
+ /usr/local/include/tvm/solver/abstract/LeastSquareSolver.h \
+ /usr/local/include/tvm/solver/internal/Option.h \
+ /usr/local/include/tvm/solver/internal/SolverEvents.h \
+ /usr/local/include/tvm/task_dynamics/Proportional.h \
+ /usr/local/include/tvm/3rd-party/mpark/variant.hpp \
+ /usr/local/include/tvm/task_dynamics/ProportionalDerivative.h \
  /home/jiayu/Desktop/git_repos/mc_rtc_controllers/my_first_controller/src/api.h

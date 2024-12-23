@@ -481,6 +481,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/include/c++/11/bits/cpp_type_traits.h
  /usr/include/c++/11/bits/cxxabi_forced.h
  /usr/include/c++/11/bits/cxxabi_init_exception.h
+ /usr/include/c++/11/bits/deque.tcc
  /usr/include/c++/11/bits/enable_special_members.h
  /usr/include/c++/11/bits/erase_if.h
  /usr/include/c++/11/bits/exception.h
@@ -495,6 +496,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/include/c++/11/bits/invoke.h
  /usr/include/c++/11/bits/ios_base.h
  /usr/include/c++/11/bits/istream.tcc
+ /usr/include/c++/11/bits/list.tcc
  /usr/include/c++/11/bits/locale_classes.h
  /usr/include/c++/11/bits/locale_classes.tcc
  /usr/include/c++/11/bits/locale_facets.h
@@ -524,18 +526,22 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/include/c++/11/bits/stl_algobase.h
  /usr/include/c++/11/bits/stl_bvector.h
  /usr/include/c++/11/bits/stl_construct.h
+ /usr/include/c++/11/bits/stl_deque.h
  /usr/include/c++/11/bits/stl_function.h
  /usr/include/c++/11/bits/stl_heap.h
  /usr/include/c++/11/bits/stl_iterator.h
  /usr/include/c++/11/bits/stl_iterator_base_funcs.h
  /usr/include/c++/11/bits/stl_iterator_base_types.h
+ /usr/include/c++/11/bits/stl_list.h
  /usr/include/c++/11/bits/stl_map.h
  /usr/include/c++/11/bits/stl_multimap.h
  /usr/include/c++/11/bits/stl_multiset.h
  /usr/include/c++/11/bits/stl_pair.h
+ /usr/include/c++/11/bits/stl_queue.h
  /usr/include/c++/11/bits/stl_raw_storage_iter.h
  /usr/include/c++/11/bits/stl_relops.h
  /usr/include/c++/11/bits/stl_set.h
+ /usr/include/c++/11/bits/stl_stack.h
  /usr/include/c++/11/bits/stl_tempbuf.h
  /usr/include/c++/11/bits/stl_tree.h
  /usr/include/c++/11/bits/stl_uninitialized.h
@@ -572,6 +578,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/include/c++/11/cxxabi.h
  /usr/include/c++/11/debug/assertions.h
  /usr/include/c++/11/debug/debug.h
+ /usr/include/c++/11/deque
  /usr/include/c++/11/exception
  /usr/include/c++/11/ext/aligned_buffer.h
  /usr/include/c++/11/ext/alloc_traits.h
@@ -590,6 +597,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/include/c++/11/istream
  /usr/include/c++/11/iterator
  /usr/include/c++/11/limits
+ /usr/include/c++/11/list
  /usr/include/c++/11/map
  /usr/include/c++/11/memory
  /usr/include/c++/11/mutex
@@ -600,9 +608,11 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/include/c++/11/pstl/glue_algorithm_defs.h
  /usr/include/c++/11/pstl/glue_memory_defs.h
  /usr/include/c++/11/pstl/pstl_config.h
+ /usr/include/c++/11/queue
  /usr/include/c++/11/ratio
  /usr/include/c++/11/set
  /usr/include/c++/11/sstream
+ /usr/include/c++/11/stack
  /usr/include/c++/11/stdexcept
  /usr/include/c++/11/stdlib.h
  /usr/include/c++/11/streambuf
@@ -1043,6 +1053,7 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/local/include/mc_rtc/MessagePackBuilder.h
  /usr/local/include/mc_rtc/Schema.h
  /usr/local/include/mc_rtc/SchemaMacros.h
+ /usr/local/include/mc_rtc/clock.h
  /usr/local/include/mc_rtc/constants.h
  /usr/local/include/mc_rtc/deprecated.h
  /usr/local/include/mc_rtc/gui.h
@@ -1110,10 +1121,15 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/local/include/mc_solver/DynamicsConstraint.h
  /usr/local/include/mc_solver/KinematicsConstraint.h
  /usr/local/include/mc_solver/QPSolver.h
+ /usr/local/include/mc_solver/TVMQPSolver.h
  /usr/local/include/mc_solver/api.h
+ /usr/local/include/mc_tasks/CoMTask.h
  /usr/local/include/mc_tasks/MetaTask.h
  /usr/local/include/mc_tasks/PostureTask.h
+ /usr/local/include/mc_tasks/TVMTrajectoryTaskGeneric.h
+ /usr/local/include/mc_tasks/TrajectoryTaskGeneric.h
  /usr/local/include/mc_tasks/api.h
+ /usr/local/include/mc_tasks/tasks_traits.h
  /usr/local/include/mc_tvm/DynamicFunction.h
  /usr/local/include/mc_tvm/api.h
  /usr/local/include/mc_tvm/fwd.h
@@ -1128,30 +1144,91 @@ src/CMakeFiles/MyFirstController.dir/MyFirstController.cpp.o
  /usr/local/include/sch/S_Object/S_Object.hxx
  /usr/local/include/sch/sch_api.h
  /usr/local/include/tasks/config.hh
+ /usr/local/include/tvm/3rd-party/mpark/variant.hpp
+ /usr/local/include/tvm/ControlProblem.h
+ /usr/local/include/tvm/LinearizedControlProblem.h
  /usr/local/include/tvm/Range.h
  /usr/local/include/tvm/Space.h
+ /usr/local/include/tvm/Task.h
  /usr/local/include/tvm/Variable.h
  /usr/local/include/tvm/VariableVector.h
  /usr/local/include/tvm/api.h
+ /usr/local/include/tvm/constraint/BasicLinearConstraint.h
+ /usr/local/include/tvm/constraint/abstract/Constraint.h
+ /usr/local/include/tvm/constraint/abstract/LinearConstraint.h
+ /usr/local/include/tvm/constraint/enums.h
+ /usr/local/include/tvm/constraint/internal/RHSVectors.h
  /usr/local/include/tvm/defs.h
  /usr/local/include/tvm/deprecated.hh
+ /usr/local/include/tvm/function/BasicLinearFunction.h
+ /usr/local/include/tvm/function/IdentityFunction.h
  /usr/local/include/tvm/function/abstract/Function.h
  /usr/local/include/tvm/function/abstract/LinearFunction.h
+ /usr/local/include/tvm/graph/CallGraph.h
  /usr/local/include/tvm/graph/abstract/Node.h
  /usr/local/include/tvm/graph/abstract/Node.hpp
+ /usr/local/include/tvm/graph/abstract/OutputSelector.h
  /usr/local/include/tvm/graph/abstract/Outputs.h
  /usr/local/include/tvm/graph/internal/AbstractNode.h
+ /usr/local/include/tvm/graph/internal/DependencyGraph.h
  /usr/local/include/tvm/graph/internal/Inputs.h
  /usr/local/include/tvm/graph/internal/Inputs.hpp
  /usr/local/include/tvm/graph/internal/Log.h
  /usr/local/include/tvm/graph/internal/Logger.h
+ /usr/local/include/tvm/hint/Substitution.h
+ /usr/local/include/tvm/hint/abstract/SubstitutionCalculator.h
+ /usr/local/include/tvm/hint/abstract/SubstitutionCalculatorImpl.h
+ /usr/local/include/tvm/hint/internal/AutoCalculator.h
+ /usr/local/include/tvm/hint/internal/SubstitutionUnit.h
+ /usr/local/include/tvm/hint/internal/Substitutions.h
+ /usr/local/include/tvm/internal/CallbackManager.h
  /usr/local/include/tvm/internal/FirstOrderProvider.h
  /usr/local/include/tvm/internal/IdProvider.h
  /usr/local/include/tvm/internal/MatrixProperties.h
  /usr/local/include/tvm/internal/MatrixWithProperties.h
  /usr/local/include/tvm/internal/ObjWithId.h
+ /usr/local/include/tvm/internal/PairElementToken.h
+ /usr/local/include/tvm/internal/RangeCounting.h
+ /usr/local/include/tvm/internal/VariableCountingVector.h
  /usr/local/include/tvm/internal/enums.h
  /usr/local/include/tvm/internal/meta.h
+ /usr/local/include/tvm/internal/traits.h
+ /usr/local/include/tvm/requirements/AnisotropicWeight.h
+ /usr/local/include/tvm/requirements/PriorityLevel.h
+ /usr/local/include/tvm/requirements/SolvingRequirements.h
+ /usr/local/include/tvm/requirements/ViolationEvaluation.h
+ /usr/local/include/tvm/requirements/Weight.h
+ /usr/local/include/tvm/requirements/abstract/SingleSolvingRequirement.h
+ /usr/local/include/tvm/scheme/WeightedLeastSquares.h
+ /usr/local/include/tvm/scheme/abstract/ResolutionScheme.h
+ /usr/local/include/tvm/scheme/internal/Assignment.h
+ /usr/local/include/tvm/scheme/internal/Assignment.hpp
+ /usr/local/include/tvm/scheme/internal/AssignmentTarget.h
+ /usr/local/include/tvm/scheme/internal/CompiledAssignment.h
+ /usr/local/include/tvm/scheme/internal/CompiledAssignmentWrapper.h
+ /usr/local/include/tvm/scheme/internal/LinearizedProblemComputationData.h
+ /usr/local/include/tvm/scheme/internal/MatrixAssignment.h
+ /usr/local/include/tvm/scheme/internal/ProblemComputationData.h
+ /usr/local/include/tvm/scheme/internal/ProblemDefinitionEvent.h
+ /usr/local/include/tvm/scheme/internal/ResolutionSchemeBase.h
+ /usr/local/include/tvm/scheme/internal/SchemeAbilities.h
+ /usr/local/include/tvm/scheme/internal/helpers.h
+ /usr/local/include/tvm/scheme/internal/helpers.hpp
+ /usr/local/include/tvm/solver/abstract/LeastSquareSolver.h
+ /usr/local/include/tvm/solver/internal/Option.h
+ /usr/local/include/tvm/solver/internal/SolverEvents.h
+ /usr/local/include/tvm/task_dynamics/None.h
+ /usr/local/include/tvm/task_dynamics/Proportional.h
+ /usr/local/include/tvm/task_dynamics/ProportionalDerivative.h
+ /usr/local/include/tvm/task_dynamics/abstract/TaskDynamics.h
+ /usr/local/include/tvm/task_dynamics/abstract/TaskDynamicsImpl.h
+ /usr/local/include/tvm/task_dynamics/enums.h
+ /usr/local/include/tvm/utils/AffineExpr.h
+ /usr/local/include/tvm/utils/ProtoTask.h
+ /usr/local/include/tvm/utils/internal/AffineExprDetail.h
+ /usr/local/include/tvm/utils/internal/AffineExprOperators.h
  /usr/local/include/tvm/utils/internal/MapWithVariableAsKey.h
+ /usr/local/include/tvm/utils/internal/ProtoTaskDetails.h
  /usr/local/include/tvm/utils/internal/map.h
+ /usr/local/include/tvm/utils/memoryChecks.h
 
