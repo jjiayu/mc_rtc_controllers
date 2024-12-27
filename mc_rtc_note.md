@@ -26,6 +26,12 @@ Alternatively, we can think about communication in ROS1:
 
 - Communication to the motors directly: This requires development of a package like other interfaces, e.g., mc_pepper, mc_mujoco, mc_franka. It sounds complicated, but in fact it is just sending motor command after control.run(), and retrieving sensor reading before control.run().
 
+### Robot Modules
+
+- Currently Imported Robot Modules:  mc_panda
+
+- Unsuccessful Examples: aliengo, UR5e (partially broken, interactive end-effector task is wrong)
+
 # Resources Collection
 - Tutorials: https://jrl.cnrs.fr/mc_rtc/tutorials.html (ROS2 installation needs to follow the superbuild option)
 
